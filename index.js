@@ -5,64 +5,6 @@ const fs = require("fs");
 // linking to file where the README is developed
 const generatePage = require("./utils/generateMarkdown.js");
 
-// const generateMarkdown = ({
-//     project_title,
-//     description,
-//     installation,
-//     usage,
-//     contributing,
-//     github_url,
-//     email,
-//     tests,
-//     copyright_year,
-//     author,
-// }) =>
-//     `# ${project_title} ![](https://img.shields.io/badge/license-MIT-blue)
-// ## Description
-// ${description}
-
-// ## Table of Contents
-
-// * [Installation](#installation)
-// * [Usage](#usage)
-// * [Credits](#credits)
-// * [Contributing](#contributing)
-// * [Questions](#questions)
-// * [Tests](#tests)
-// * [License](#license)
-
-// ## Installation
-
-// ${installation}
-
-// ## Usage 
-
-// ${usage} 
-
-// ## Contributing
-
-// ${contributing}
-
-// ## Questions?
-
-// Questions about this project can be directed to: 
-// - Github: ${github_url}
-// - Email: ${email}
-
-// ## Tests
-
-// ${tests}
-
-// ## License
-
-// Content in this project is governed under the MIT License. 
-
-// To read the license in its entirety, click here: [MIT](./LICENSE)
-
-// -----------
-
-// Copyright [${copyright_year}] [${author}]`;
-
 const questions = () => {
     // use inquirer to prompt for questions
     return inquirer.prompt([
@@ -77,7 +19,7 @@ const questions = () => {
             name: "license",
             message:
                 "What kind of license should your project have?",
-            choices: ["MIT", "GNU"],
+            choices: ["MIT", "GNU",],
             default: ["MIT"],
             validate: (nameInput) => {
                 if (nameInput) {
@@ -117,19 +59,19 @@ const questions = () => {
         {
             type: "input",
             message:
-                "What is the URL to your Github?:",
+                "What is the URL to your Github account?:",
             name: "github_url",
         },
         {
             type: "input",
             message:
-                "Enter your email address if a user has questions about your project:",
+                "If a user has questions about your project, what is your email address?:",
             name: "email",
         },
         {
             type: "input",
             message:
-                'Go the extra mile and write tests for your application. Then provide examples on how to run them here, or type "N/A".',
+                'What command should be entered to run tests? If no tests exist, type "N/A".',
             name: "tests",
         },
         {
