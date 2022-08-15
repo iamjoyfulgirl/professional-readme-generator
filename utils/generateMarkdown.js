@@ -13,7 +13,8 @@
 // function to generate markdown for README
 const generateMarkdown = data => {
   return `# ${data.project_title}
-  ![badge](http://img.shields.io/badge/license-${data.license}-blue)<br />
+  ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)
+
   
 ## Description
 ${data.description}
@@ -21,12 +22,11 @@ ${data.description}
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [Credits](#credits)
 * [Contributing](#contributing)
-* [Questions](#questions)
 * [Tests](#tests)
 * [License](#license)
-      
+* [Questions](#questions)
+
 ## Installation
 ${data.installation}
   
@@ -34,6 +34,8 @@ ${data.installation}
 ${data.usage} 
       
 ## Contributing
+*If you would like to contribute this project, you can follow these guidelines for how to do so.*
+<br />
 ${data.contributing}
 
 ## Questions?
@@ -53,7 +55,7 @@ Content in this project is covered by the ${data.license} license.
 
 -----------
 
-Copyright [${data.copyright_year}] [${data.author}]`;
+README Generator - Copyright ${data.copyright_year} ${data.author}`;
 }
 
 // use for importing markdown in index
